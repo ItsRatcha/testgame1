@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://p38es23ua7sp"]
+
+[ext_resource type="Script" uid="uid://cj5o0cd4gslif" path="res://scripts/buttons.gd" id="1_ew542"]
+[ext_resource type="Script" uid="uid://boi6osl0o6l6p" path="res://scripts/color_button.gd" id="2_puxpd"]
+
+[sub_resource type="Theme" id="Theme_wym4d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew542"]
+
+[node name="Node2D" type="Node2D" unique_id=19973850]
+script = ExtResource("1_ew542")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1552715998]
+
+[node name="Label" type="Label" parent="Camera2D" unique_id=617044361]
+offset_left = -106.0
+offset_top = -268.0
+offset_right = 107.0
+offset_bottom = -245.0
+text = "These are buttons I learned"
+
+[node name="colorButton" type="Button" parent="." unique_id=440302104]
+offset_left = -484.0
+offset_top = -191.0
+offset_right = -356.0
+offset_bottom = -138.0
+theme = SubResource("Theme_wym4d")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ew542")
+text = "I Change color"
+script = ExtResource("2_puxpd")
+
+[node name="Label" type="Label" parent="colorButton" unique_id=1825750978]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -34.0
+offset_right = 209.0
+offset_bottom = -7.0
+text = "Current Color:"
+
+[connection signal="pressed" from="colorButton" to="." method="_on_color_button_pressed"]
